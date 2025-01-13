@@ -1,5 +1,3 @@
-HEAD
 Change on master branch
 
 First change
-7e8fd3a (First commit on feature-branch)
