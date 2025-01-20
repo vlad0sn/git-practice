@@ -1,6 +1,11 @@
 const request = require('supertest');
 const app = require('./app');
 
+// Example 5-4: Update the test to expect the new response 
+(td5/scripts/sample-app/app.test.js) 
+expect(response.text).toBe('DevOps Labs!');
+
+
 describe('Test the app', () => {
   test('Get / should return Hello, World!', async () => {
     const response = await request(app).get('/');
