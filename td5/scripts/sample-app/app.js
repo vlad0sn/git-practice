@@ -1,17 +1,12 @@
-const express = require('express');
+const http = require('http');
 
-const app = express();
-app.set('view engine', 'ejs');
-
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello, World!\n');
 });
 
-app.get('/name/:name', (req, res) => {
-  res.render('hello', {name: req.params.name});
+const port = process.env.PORT || 8080;
+server.listen(port,() => {
+  console.log(`Listening on port ${port}`);
 });
 
-module.exports = app;
-
-// Example 5-3: Update the app response text (td5/scripts/sample-app/app.js) 
-res.send('DevOps Labs!');
