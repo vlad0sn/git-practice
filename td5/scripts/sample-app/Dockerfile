@@ -3,11 +3,7 @@ FROM node:21.7
 WORKDIR /home/node/app
 
 COPY package.json .
-COPY package-lock.json .
-
-RUN npm ci --only=production
-
-COPY *.js .
+COPY app.js .
 
 EXPOSE 8080
 
